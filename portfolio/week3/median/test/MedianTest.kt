@@ -17,4 +17,20 @@ class MedianTest : FreeSpec({
     }
 
     // Write four more tests here
+    "Singular list is exact value" {
+        val numbers = listOf<Float>(9.0f)
+        median(numbers) shouldBe (9)
+    }
+    "Double list is average" {
+        val numbers = listOf<Float>(9.0f,11.0f)
+        median(numbers) shouldBe (10)
+    }
+    "Test with reversed list" {
+        val numbers = listOf<Float>(15.0f, 9f, 12.0f)
+        median(numbers) shouldBe (12)
+    }
+    "Test with random order" {
+        val numbers = listOf<Float>(0.0f, 15.0f, 9.0f, 13.0f)
+        median(numbers) shouldBe (11)
+    }
 })
